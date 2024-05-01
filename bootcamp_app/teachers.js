@@ -17,7 +17,7 @@ WHERE cohorts.name = $1
 ORDER BY teacher;
 `;
 const cohortName = process.argv[2];
-const value = `%${cohortName}%`;
+const value = [`%${cohortName}%`];
 
 pool.query(queryString, value)
   .then(res => {
